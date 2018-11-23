@@ -37,6 +37,12 @@ public class LoginTest extends TestBase{
 		Assert.assertEquals("CRMPRO", title);
 	}
 	
+	@Test
+	public void plsIgnoreMe() {
+		
+		System.out.println("This test is just for trial");
+	}
+	
 	@AfterMethod
 	public void teardown() {
 		driver.close();
