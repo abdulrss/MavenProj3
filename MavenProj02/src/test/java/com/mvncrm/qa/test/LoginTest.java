@@ -41,6 +41,8 @@ public class LoginTest extends TestBase{
 	public void plsIgnoreMe() {
 		
 		System.out.println("This test is just for trial");
+		System.out.println("This test is to check for build trigger");
+		
 	}
 	
 	@AfterMethod
