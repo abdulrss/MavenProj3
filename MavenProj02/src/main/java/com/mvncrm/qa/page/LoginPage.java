@@ -8,10 +8,18 @@ import com.mvncrm.qa.base.TestBase;
 
 public class LoginPage extends TestBase {
 	
-	//Define Obj Reop
+	//Define Obj Repo
 	@FindBy(name="username") WebElement username_field;
 	@FindBy(xpath="//input[@type='password']") WebElement password_field;
-	@FindBy(xpath="//input[@type='submit']") WebElement submitBtn;
+	@FindBy(xpath="//input[@value='Login']") WebElement submitBtn;
+	//@FindBy(css="Login") WebElement submitBtn;
+	@FindBy(id="loginform") WebElement LoginForm;
+	
+	
+	//Define Obj Reop for HomePage
+	@FindBy(xpath="//a[@title='Companies']") WebElement companiesTab;
+	@FindBy(xpath="//input[@value='New Company']") public WebElement newCompanyButton;
+	
 	
 	//initialise the page
 		public LoginPage() {
@@ -23,7 +31,13 @@ public class LoginPage extends TestBase {
 	public void loginCRM(String uid, String pwd) {
 		this.username_field.sendKeys(uid);
 		this.password_field.sendKeys(pwd);
-		submitBtn.click();
+		submitBtn.submit();
+	}
+	
+	public void navigateToCompaniesTab(String uid, String pwd) {
+		loginCRM(uid, pwd);
+		companiesTab.click();
+		
 	}
 	
 	

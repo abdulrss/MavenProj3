@@ -2,6 +2,8 @@ package com.mvncrm.qa.test;
 
 import static org.testng.Assert.assertEquals;
 
+import java.net.MalformedURLException;
+
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -17,7 +19,7 @@ public class LoginTest extends TestBase{
 	LoginPage loginPage;
 	
 	@BeforeMethod
-	public void setup() {
+	public void setup() throws MalformedURLException {
 		initiateBrowser();
 		loginPage = new LoginPage();
 	}
@@ -38,10 +40,12 @@ public class LoginTest extends TestBase{
 	}
 	
 	@Test
-	public void plsIgnoreMe() {
+	public void navigateToCompaniesPage() {
 		
-		System.out.println("This test is just for trial");
-		System.out.println("This test is to check for build trigger");
+		loginPage.navigateToCompaniesTab("abdulrss", "abdulrss");
+		String title = driver.getTitle();
+		Assert.assertEquals("", title);
+		loginPage.newCompanyButton.isDisplayed();
 		
 	}
 	
