@@ -11,7 +11,9 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import com.mvncrm.qa.util.*;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.Capabilities;
+import org.openqa.selenium.Platform;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.*;
@@ -28,6 +30,7 @@ public class TestBase {
 			
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("disable-infobars");
+			options.addArguments("--start-maximized");
 			System.setProperty("webdriver.chrome.driver", "C:\\Automation Test\\chromedriver.exe");
 			
 			driver = new ChromeDriver(options);
@@ -35,7 +38,7 @@ public class TestBase {
 		}
 		
 		else if (browserName.equalsIgnoreCase("firefox")) {
-			System.setProperty("webdriver.chrome.driver", "C:\\Automation Test\\chromedriver.exe");
+			System.setProperty("webdriver.gecko.driver", "C:\\Automation Test\\geckodriver.exe");
 			
 			driver = new FirefoxDriver();
 			driver.manage().window().maximize();
@@ -63,7 +66,35 @@ public class TestBase {
 		driver.manage().timeouts().pageLoadTimeout(ProjProperties.PAGELOAD_TIMEOUT, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(ProjProperties.IMPLICIT_TIMEOUT, TimeUnit.SECONDS);
 		
-		
 	}
+	
+//	public static void initiateBrowser() throws MalformedURLException {
+//		
+//		String browserName = ProjProperties.BROWSERNAME;
+//		ChromeOptions options = new ChromeOptions();
+//		DesiredCapabilities dc = new DesiredCapabilities();
+//		String hubURL = "http://192.168.0.42:4444/wd/hub";
+//		
+//		
+//		
+//		if(browserName.equalsIgnoreCase("GridSelenium")) {
+//			
+//			dc.setBrowserName("chrome");
+//			dc.setPlatform(Platform.WIN10);
+//			
+//			//Set chrome options
+//			
+//			options.addArguments("disable-infobars");
+//			options.addArguments("--start-maximized");
+//			//options.merge(dc);
+//			WebDriver driver = new RemoteWebDriver(new URL(hubURL), dc);
+//			
+//			//WebDriver driver = new RemoteWebDriver(new URL(hubURL), dc);
+//			driver.get("https://www.freecrm.com/index.html");
+//			
+//		}
+//		
+//		
+//	}
 
 }

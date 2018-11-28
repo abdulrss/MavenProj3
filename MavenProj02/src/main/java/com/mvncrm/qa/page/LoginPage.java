@@ -5,8 +5,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.mvncrm.qa.base.TestBase;
+import com.mvncrm.qa.util.ProjProperties;
 
 public class LoginPage extends TestBase {
+	
+	ProjProperties projProperties = new ProjProperties();
 	
 	//Define Obj Repo
 	@FindBy(name="username") WebElement username_field;
@@ -17,8 +20,8 @@ public class LoginPage extends TestBase {
 	
 	
 	//Define Obj Reop for HomePage
-	@FindBy(xpath="//a[@title='Companies']") WebElement companiesTab;
-	@FindBy(xpath="//input[@value='New Company']") public WebElement newCompanyButton;
+	@FindBy(xpath="//a[contains(text(), 'Companies')]") public WebElement companiesLink;
+	@FindBy(xpath="//td[contains(text(), 'Companies')]") public WebElement companyLabel;
 	
 	
 	//initialise the page
@@ -36,7 +39,8 @@ public class LoginPage extends TestBase {
 	
 	public void navigateToCompaniesTab(String uid, String pwd) {
 		loginCRM(uid, pwd);
-		companiesTab.click();
+		projProperties.switchToFrame();
+		this.companiesLink.click();
 		
 	}
 	
