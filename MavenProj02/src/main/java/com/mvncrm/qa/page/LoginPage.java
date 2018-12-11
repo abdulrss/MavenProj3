@@ -15,7 +15,6 @@ public class LoginPage extends TestBase {
 	@FindBy(name="username") WebElement username_field;
 	@FindBy(xpath="//input[@type='password']") WebElement password_field;
 	@FindBy(xpath="//input[@value='Login']") WebElement submitBtn;
-	//@FindBy(css="Login") WebElement submitBtn;
 	@FindBy(id="loginform") WebElement LoginForm;
 	
 	
@@ -30,7 +29,6 @@ public class LoginPage extends TestBase {
 		}
 	
 	//Methods
-	
 	public void loginCRM(String uid, String pwd) {
 		this.username_field.sendKeys(uid);
 		this.password_field.sendKeys(pwd);
@@ -41,7 +39,6 @@ public class LoginPage extends TestBase {
 		loginCRM(uid, pwd);
 		projProperties.switchToFrame();
 		this.companiesLink.click();
-		
 	}
 	
 	

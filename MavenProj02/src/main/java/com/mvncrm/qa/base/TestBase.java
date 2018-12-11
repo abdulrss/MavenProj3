@@ -68,33 +68,33 @@ public class TestBase {
 		
 	}
 	
-//	public static void initiateBrowser() throws MalformedURLException {
-//		
-//		String browserName = ProjProperties.BROWSERNAME;
-//		ChromeOptions options = new ChromeOptions();
-//		DesiredCapabilities dc = new DesiredCapabilities();
-//		String hubURL = "http://192.168.0.42:4444/wd/hub";
-//		
-//		
-//		
-//		if(browserName.equalsIgnoreCase("GridSelenium")) {
-//			
-//			dc.setBrowserName("chrome");
-//			dc.setPlatform(Platform.WIN10);
-//			
-//			//Set chrome options
-//			
-//			options.addArguments("disable-infobars");
-//			options.addArguments("--start-maximized");
-//			//options.merge(dc);
-//			WebDriver driver = new RemoteWebDriver(new URL(hubURL), dc);
-//			
-//			//WebDriver driver = new RemoteWebDriver(new URL(hubURL), dc);
-//			driver.get("https://www.freecrm.com/index.html");
-//			
-//		}
-//		
-//		
-//	}
+	/*public static void initiateBrowser() throws MalformedURLException {
+		
+		String browserName = ProjProperties.BROWSERNAME;
+		ChromeOptions options = new ChromeOptions();
+		DesiredCapabilities dc = new DesiredCapabilities();
+		String hubURL = "http://192.168.0.42:4444/wd/hub";
+		
+		
+		
+		if(browserName.equalsIgnoreCase("GridSelenium")) {
+			
+			dc.setBrowserName("chrome");
+			dc.setPlatform(Platform.WIN10);
+			
+			//Set chrome options
+			
+			options.addArguments("disable-infobars");
+			options.addArguments("--start-maximized");
+			//options.merge(dc);
+			WebDriver driver = new RemoteWebDriver(new URL(hubURL), dc);
+			
+			//WebDriver driver = new RemoteWebDriver(new URL(hubURL), dc);
+			driver.get("https://www.freecrm.com/index.html");
+			
+		}
+		
+		
+	}*/
 
 }
