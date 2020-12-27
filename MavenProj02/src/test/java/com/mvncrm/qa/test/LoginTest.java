@@ -29,8 +29,7 @@ public class LoginTest extends TestBase{
 	}
 	
 	@Test(priority=1)
-	public void verifyLoginPageTitleTest() throws InterruptedException {
-		Thread.sleep(3000);
+	public void verifyLoginPageTitleTest() {
 		String title = driver.getTitle();
 		System.out.println("The title of the page is " +title);
 		Assert.assertEquals(title, "#1 Free CRM software in the cloud for sales and service");
@@ -54,7 +53,6 @@ public class LoginTest extends TestBase{
 	
 	@AfterMethod
 	public void teardown() {
-		driver.close();
 		driver.quit();
 	}
 

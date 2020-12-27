@@ -30,8 +30,8 @@ public class LoginPage extends TestBase {
 	
 	//Methods
 	public void loginCRM(String uid, String pwd) {
-		this.username_field.sendKeys(uid);
-		this.password_field.sendKeys(pwd);
+		username_field.sendKeys(uid);
+		password_field.sendKeys(pwd);
 		submitBtn.submit();
 	}
 	
@@ -42,6 +42,4 @@ public class LoginPage extends TestBase {
 	}
 	
 	
-	
-
 }
